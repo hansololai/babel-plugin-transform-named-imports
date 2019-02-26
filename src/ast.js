@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const Babylon = require('babylon');
+const Babylon = require('@babel/parser');
 
 const Resolver = require('./resolver');
 const extractExportSpecifiers = require('./extractExportSpecifiers');
@@ -36,12 +36,12 @@ class AST {
                 sourceType: 'module',
                 plugins: [
                     'jsx',
-                    'flow',
+                    // 'flow',
                     'estree',
                     'typescript',
                     'doExpressions',
                     'objectRestSpread',
-                    'decorators',
+                    'decorators-legacy',
                     'decorators2',
                     'classProperties',
                     'classPrivateProperties',
@@ -57,7 +57,7 @@ class AST {
                     'bigInt',
                     'optionalCatchBinding',
                     'throwExpressions',
-                    'pipelineOperator',
+                    ['pipelineOperator',{proposal:"smart"}],
                     'nullishCoalescingOperator',
                 ],
             });

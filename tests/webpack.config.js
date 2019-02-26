@@ -5,5 +5,11 @@ module.exports = {
         modules: [
             path.resolve(__dirname),
         ],
+        extensions: [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+        ]
     },
 };

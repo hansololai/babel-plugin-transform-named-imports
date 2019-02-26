@@ -21,7 +21,7 @@ pluginTester({
     tests: {
         // convert this into a default import that leads to `testmodule/myFunc`
         'single named import':
-            `import { Foo2 } from 'testmodule'`,
+            `import { Foo3 } from 'testmodule'`,
 
         // convert this into named import that leads to `testmodule/myOtherFunc`
         'nested named import':

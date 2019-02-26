@@ -58,7 +58,7 @@ import init, { myFunc, myOtherFunc } from 'testmodule'
 
 import init from './tests/testmodule/index.js';
 import myFunc from './tests/testmodule/myFunc.js';
-import { myOtherFunc } from './tests/testmodule/myOtherFunc.js';
+import { myOtherOtherFunc as myOtherFunc } from './tests/testmodule/reexport.js';
 "
 `;
 
@@ -79,7 +79,7 @@ import { myFunc, myOtherFunc } from 'testmodule'
       ↓ ↓ ↓ ↓ ↓ ↓
 
 import myFunc from './tests/testmodule/myFunc.js';
-import { myOtherFunc } from './tests/testmodule/myOtherFunc.js';
+import { myOtherOtherFunc as myOtherFunc } from './tests/testmodule/reexport.js';
 "
 `;
 
@@ -89,17 +89,17 @@ import { myOtherFunc } from 'testmodule'
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-import { myOtherFunc } from './tests/testmodule/myOtherFunc.js';
+import { myOtherOtherFunc as myOtherFunc } from './tests/testmodule/reexport.js';
 "
 `;
 
 exports[`single named import 1`] = `
 "
-import { myFunc } from 'testmodule'
+import { Foo3 } from 'testmodule'
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-import myFunc from './tests/testmodule/myFunc.js';
+import { default as Foo3 } from './tests/testmodule/stuff/foo3.tsx';
 "
 `;
 
